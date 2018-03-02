@@ -1,0 +1,40 @@
+
+<html>
+<head>
+<title>Lovense endpoints</title>
+<script>
+	function getHostname(url)
+	{
+		var hostpart=url.split("/")[2];
+		return hostpart.split(":")[0];
+	}
+
+	function XHRresult()
+	{
+		var results=document.getElementById("results");
+		var para=document.createElement("p");
+		var host=getHostname(this.responseURL);
+		var node=document.createTextNode(host + ": " + this.responseText);
+		para.appendChild(node);
+		results.appendChild(para);
+	}
+	
+	function getIt()
+	{
+		// Try XHR scan
+		for (i = 1; i < 254; i++)
+		{
+			var url = "http://192.168.0." + i + ":34567/GetToys";
+			var req = new XMLHttpRequest();
+			req.addEventListener("load", XHRresult);
+			req.open("GET",url, true);
+			req.send();
+		}
+	}
+</script>
+</head>
+<body onload="getIt()">
+<h1>Lovense Endpoints</h1>
+
+<div id="results"></div>
+</body>
